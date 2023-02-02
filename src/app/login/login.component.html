@@ -1,11 +1,12 @@
-<form (ngSubmit)="onSubmit()" [formGroup]="form">
+<form (ngSubmit)="form.valid && submit()" [formGroup]="form">
     <div>
-      <label for="username">Username:</label>
-      <input type="text" id="username" formControlName="email">
+      <label>email:</label>
+      <input type="text" formControlName="email">
     </div>
     <div>
-      <label for="password">Password:</label>
-      <input type="password" id="password" formControlName="password">
+      <label>password:</label>
+      <input type="password" formControlName="password">
     </div>
     <button type="submit">Login</button>
 </form>
+<label *ngIf="error">{{error}}</label>

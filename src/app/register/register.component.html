@@ -1,0 +1,16 @@
+<form (ngSubmit)="form.valid && submit()" [formGroup]="form">
+    <div>
+        <label>email</label>
+        <input type="text" formControlName="email"> 
+    </div>
+    <div>
+        <label>username</label>
+        <input type="text" formControlName="username"> 
+    </div>
+    <div>
+        <label>password</label>
+        <input type="password" formControlName="password"> 
+    </div>
+    <button type="submit">Register</button>
+</form>
+<label *ngIf="error">{{error}}</label>
